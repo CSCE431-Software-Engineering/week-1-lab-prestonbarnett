@@ -1,14 +1,41 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+  <div class="alert alert-primary" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 
 <h1>Books</h1>
 
-<div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
-  <% end %>
-</div>
+<% if @books.present? %>
+  <div id="books">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Price</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+          <tr>
+            <td class="align-middle">
+              <strong><%= book.title %></strong>
+            </td>
+            <td class="align-middle"><%= book.author %></td>
+            <td class="align-middle"><%= book.price %></td>
+            <td class="d-flex flex-row gap-2">
+              <%= link_to "Show", book, class: "btn btn-primary" %>
+              <%= link_to "Edit", edit_book_path(book), class: "btn btn-secondary" %>
+              <%= button_to "Delete", book, method: :delete, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+    </table>
+  </div>
+<% else %>
+  <p>There are no books yet.</p>
+<% end %>
 
-<%= link_to "New book", new_book_path %>
+<%= link_to "New book", new_book_path, class: "btn btn-success" %>
