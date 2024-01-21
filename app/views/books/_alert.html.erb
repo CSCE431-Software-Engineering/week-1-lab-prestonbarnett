@@ -1,0 +1,5 @@
+<% if content_for?(:alert_content) %>
+  <div class="alert <%= defined?(alert_type) ?  alert_type : 'alert-success' %>" role="alert">
+    <%= yield :alert_content %>
+  </div>
+<% end %>

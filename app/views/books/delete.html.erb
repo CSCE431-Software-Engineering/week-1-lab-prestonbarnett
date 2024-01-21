@@ -1,0 +1,22 @@
+<h1>Delete Book</h1>
+
+<%= render("breadcrumb", breadcrumbs: [
+  { name: "Books", path: root_path },
+  { name: @book.title, path: @book },
+  { name: "Delete" }
+]) %>
+
+
+<div class="card">
+  <div class="card-body">
+    <p>
+      Are you sure you want to delete the book "<strong><%= @book.title %></strong>"
+      by <strong><%= @book.author %></strong>?
+    </p>
+
+    <div class="d-flex flex-row gap-3 mt-3">
+      <%= link_to("Go Back", :back, class: "btn btn-secondary") %>
+      <%= button_to("Delete", @book, method: :delete, class: "btn btn-danger") %>
+    </div>
+  </div>
+</div>

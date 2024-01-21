@@ -1,15 +1,16 @@
 <%= form_with(model: book) do |form| %>
-  <% if book.errors.any? %>
-    <div class="alert alert-danger">
+  <% content_for :alert_content do %>
+    <% if book.errors.any? %>
       <h4><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h4>
-
       <ul>
         <% book.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
-    </div>
+    <% end %>
   <% end %>
+
+  <%= render("alert", alert_type: "alert-danger") %>
 
   <div class="mb-3">
     <%= form.label :title %>
