@@ -15,7 +15,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create book" do
+  test "should create book and set notice" do
     assert_difference("Book.count") do
       post books_url, params: { book: {
         title: "Unique Title",
@@ -26,6 +26,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to book_url(Book.last)
+    assert_not_nil flash[:notice]
   end
 
   test "should show book" do
@@ -38,7 +39,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update book" do
+  test "should update book and set notice" do
     patch book_url(@book), params: { book: {
       title: @book.title,
       author: @book.author,
@@ -46,13 +47,15 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
       published: @book.published,
     } }
     assert_redirected_to book_url(@book)
+    assert_not_nil flash[:notice]
   end
 
-  test "should destroy book" do
+  test "should destroy book and set notice" do
     assert_difference("Book.count", -1) do
       delete book_url(@book)
     end
 
     assert_redirected_to books_url
+    assert_not_nil flash[:notice]
   end
 end
