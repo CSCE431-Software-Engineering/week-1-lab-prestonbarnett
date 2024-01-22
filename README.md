@@ -1,24 +1,5 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Book Collection Assignment
+## Description
+This is the book collection assignment for CSCE 431.
+It's a simple web application that allows users to add books to a collection and view the collection.
+It's written in Ruby and utilizes Rails with Bootstrap.

@@ -27,5 +27,10 @@
     <%= form.number_field :price, step: 0.01, class: 'form-control' %>
   </div>
 
+  <div class="mb-3">
+    <%= form.label :published %>
+    <%= form.date_field :published, class: 'form-control' %>
+  </div>
+
   <%= form.submit class: 'btn btn-primary' %>
 <% end %>
