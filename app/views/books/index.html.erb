@@ -16,8 +16,8 @@
               <th></th>
               <th scope="col">Title</th>
               <th scope="col">Author</th>
-              <th scope="col">Published</th>
               <th scope="col">Price</th>
+              <th scope="col">Pages</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>
@@ -30,9 +30,9 @@
                 <td>
                   <strong><%= book.title %></strong>
                 </td>
-                <td><%= book.author %></td>
-                <td><%= book.published.strftime("%m/%d/%Y") %></td>
+                <td><%= get_field(book, 'author') %></td>
                 <td><%= number_to_currency(book.price) %></td>
+                <td><%= get_field(book, 'pages') %></td>
                 <td>
                   <%= link_to("View Book", book, class: "btn btn-primary") %>
                 </td>

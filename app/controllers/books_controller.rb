@@ -62,8 +62,15 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :price, :author, :published)
+      params.require(:book).permit(
+        :title,
+        :author,
+        :price,
+        :publisher,
+        :published,
+        :release_date,
+        :pages,
+      )
     end
 end

@@ -12,25 +12,44 @@
 
   <%= render("alert", alert_type: "alert-danger") %>
 
-  <div class="mb-3">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control' %>
-  </div>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th scope="row"><%= form.label :title %></th>
+        <td><%= form.text_field :title, class: 'form-control' %></td>
+      </tr>
 
-  <div class="mb-3">
-    <%= form.label :author %>
-    <%= form.text_field :author, class: 'form-control' %>
-  </div>
+      <tr>
+        <th scope="row"><%= form.label :author %></th>
+        <td><%= form.text_field :author, class: 'form-control' %></td>
+      </tr>
 
-  <div class="mb-3">
-    <%= form.label :price %>
-    <%= form.number_field :price, step: 0.01, class: 'form-control' %>
-  </div>
+      <tr>
+        <th scope="row"><%= form.label :price %></th>
+        <td><%= form.number_field :price, step: 0.01, class: 'form-control' %></td>
+      </tr>
 
-  <div class="mb-3">
-    <%= form.label :published %>
-    <%= form.date_field :published, class: 'form-control' %>
-  </div>
+      <tr>
+        <th scope="row"><%= form.label :publisher %></th>
+        <td><%= form.text_field :publisher, class: 'form-control' %></td>
+      </tr>
+
+      <tr>
+        <th scope="row"><%= form.label :published %></th>
+        <td><%= form.date_field :published, class: 'form-control' %></td>
+      </tr>
+
+      <tr>
+        <th scope="row"><%= form.label :release_date %></th>
+        <td><%= form.date_field :release_date, class: 'form-control' %></td>
+      </tr>
+
+      <tr>
+        <th scope="row"><%= form.label :pages %></th>
+        <td><%= form.number_field :pages, class: 'form-control' %></td>
+      </tr>
+    </tbody>
+  </table>
 
   <%= form.submit class: 'btn btn-primary' %>
 <% end %>

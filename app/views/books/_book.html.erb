@@ -5,9 +5,32 @@
       <%= book.title %>
     </strong>
   </h3>
-  <p>
-    <strong>Author</strong>: <%= book.author %><br />
-    <strong>Price</strong>: <%= number_to_currency book.price %><br />
-    <strong>Published</strong>: <%= book.published.strftime("%m/%d/%Y") %>
-  </p>
+  <table class="table">
+    <tbody>
+    <tr>
+      <th scope="row">Author</th>
+      <td><%= get_field(book, 'author') %></td>
+    </tr>
+    <tr>
+      <th scope="row">Price</th>
+      <td><%= number_to_currency book.price %></td>
+    </tr>
+    <tr>
+      <th scope="row">Publisher</th>
+      <td><%= get_field(book, 'publisher') %></td>
+    </tr>
+    <tr>
+      <th scope="row">Published</th>
+      <td><%= formatted_date(book.published) %></td>
+    </tr>
+    <tr>
+      <th scope="row">Released On</th>
+      <td><%= formatted_date(book.release_date) %></td>
+    </tr>
+    <tr>
+      <th scope="row">Pages</th>
+      <td><%= get_field(book, 'pages') %></td>
+    </tr>
+    </tbody>
+  </table>
 </div>
