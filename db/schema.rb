@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_21_063758) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_29_010915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_21_063758) do
     t.string "author"
     t.decimal "price"
     t.date "published"
+    t.string "publisher"
+    t.integer "pages"
+    t.date "release_date"
   end
 
 end
