@@ -32,5 +32,20 @@
     <%= form.date_field :published, class: 'form-control' %>
   </div>
 
+  <div class="mb-3">
+    <%= form.label :publisher %>
+    <%= form.text_field :publisher, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :release_date %>
+    <%= form.date_field :release_date, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :pages %>
+    <%= form.number_field :pages, step: 1, class: 'form-control' %>
+  </div>
+
   <%= form.submit class: 'btn btn-primary' %>
 <% end %>
