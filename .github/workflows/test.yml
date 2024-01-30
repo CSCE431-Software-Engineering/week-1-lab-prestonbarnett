@@ -2,9 +2,9 @@ name: Ruby Tests
 
 on:
   push:
-    branches: [ main, test ]
-  pull_request:
     branches: [ main ]
+  pull_request:
+    branches: [ test ]
 
 env:
   DATABASE_USER: postgres
