@@ -4,7 +4,7 @@
         "review": {
             "addons": ["heroku-postgresql:mini"],
             "scripts": {
-                "postdeploy": "rails db:seed"
+                "postdeploy": "bundle exec rake db:seed"
             }
         }
     }
